@@ -1,14 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="">
+  <style>
+    h1 {
+      color: rgb(0, 255, 34);
+    }
+    .nav { 
+      background-color: aqua;
+    }
+    /* This highlight all p's in the body */
+    /*body p {
+      background: pink;
+    }*/
+    /*This highlights all the p's after active class*/
+    /*.active+p {
+      background: rgb(32, 119, 153);
+    }*/
+    /*This highlights all the p's only under body and not the ones in a list*/
+    /*body>p {
+      background: green;
+    }*/
+    /*This highlights
+    /*.active~p {
+      background: red;
+    }*/
+    /*The E element is the first child of t */
+    /* ul li:first-child {
+      background: red;
+    } */
+    /* ul li:last-child {
+      background: green;
+    } */
+    /* p:first-of-type {
+      background: blue;
+    } */
+    /*select 1-5 for the highlight*/
+    /* p:nth-of-type(5) {
+      background: yellow
+    } */
+    /* p:nth-child(1) {
+      background: orange
+    } */
 
+  </style>
+  <script>
+
+  </script>
 </head>
-    <style>
-
-    </style>
-    <script>
-
-    </script>
+    
 <body>
 <!-- (ctrl + /) Just testing -->
 <h1>My First Heading</h1>
@@ -23,7 +63,22 @@
 <p>My&nbsp;&nbsp;first paragraph.</p> 
 
 <p >This was created on 25 April, 2022 at approximately 12:35 pm.</p>
-
+<p class="active">P1</p>
+<p>P2</p>
+<p>P3</p>
+<ul>
+  <li><p>p4</p>
+  </li>
+  <li><p>p5</p>
+  </li>
+  <li><p>p6</p>
+  </li>
+</ul>
+<ul>
+  <li>l1</li>
+  <li>l2</li>
+  <li>l3</li>
+</ul>
 <figure class="figure">
     <img src="..." class="figure-img img-fluid rounded" alt="...">
     <figcaption class="figure-caption">A caption for the above image.</figcaption>
