@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    h1::first-letter {
+        color: red;
+    }
+    p::first-line {
+        color: red;
+        font-style: italic;
+    }
+    h3::before {
+        content: "Article";
+    }
+    h3::after {
+        content: "- and we're still writing new ones";
+    }
+    
+    .center {
+        text-align: center;
+        background: chocolate;
+        size: 500px;
+        color: blue;  
+    }
+    
+</style>
+</head>
+<body>
+    <h1>I am styled with ::first-letter</h1>
+    <h1>Each h1 element is styled with ::first-letter</h1>
+    <p>I am styled with ::first-line! Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        Vero recusandae, dolorem optio nam placeat amet quae nesciunt minima eius quis ducimus 
+        cupiditate doloremque suscipit voluptatibus ipsum mollitia aperiam quo? Eum.
+    </p>
+    <article><h3> 7</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus eum mollitia 
+            fuga expedita aliquam blanditiis dolores numquam tenetur beatae a in ab iste 
+            quisquam labore, ex laboriosam porro eos libero.
+        </p><br><br>
+    </article>
+    <div class="center">AFDAS
+    </div>
+    <canvas width="320"; height="240"; id="prototype product"></canvas>
+</body>
+</html>
