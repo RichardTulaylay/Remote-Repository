@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function test() {
+        //     var name = "lily";
+        //     var age = 30;
+        //     console.log(name + "  " + age);
+        //     age++;
+        // }
+
+        // for (let i = 0; i < 10; i++) {
+        //     test();
+        // }
+
+        function addCount() {
+            let count = 0;
+
+            function add() {
+                console.log(count++);
+            }
+            return add;
+        }
+        let add = addCount();
+        for (let i = 0; i < 10; i++) {
+            add();
+        }
+
+        // var obj001 = {
+        //     eating: function () {
+        //         var dishes = "pork";
+        //     }
+        // }
+
+        // for(var a=0;a<10;a++){
+
+        // }
+        // console.log(a);
+  
+        // function count() {
+        //     var arr = [];
+        //     for (var i = 1; i <= 3; i++) {
+        //         arr.push(function () {
+        //             return i * i;
+        //         });
+        //     }
+        //     return arr;
+        // }
+
+        // var results = count();
+        // var f1 = results[0];
+        // var f2 = results[1];
+        // var f3 = results[2];
+        // console.log(f1());
+        // console.log(f2());
+        // console.log(f3());
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+</head>
+
+<body>
+    <script>
+        //old 
+        const user = {
+            name: "lily",
+            age: 30,
+            per: {
+                addr: "abdff"
+            }
+        }
+
+           var deepcopy=_.cloneDeep(user);//deep copy
+           deepcopy.name="lucy";
+           deepcopy.per.addr="122323";
+           console.log(user.per.addr);
+
+        //new
+        //const clone = {}
+
+        //old-new
+        // for (const key in user) {
+        //     clone[key] = user[key];
+        // }
+
+        //some value in the new object 
+        // clone.name="Mike";
+        // clone.per.addr="brisbane";
+
+        //for the old object, name is the same but the object value has been changed
+        //console.log(user)
+
+
+        //shallow copy one way
+       // const clone={...user}
+
+        // user.per.addr="2343";
+        // user.name="mike"
+
+        // console.log(clone)
+
+        //shallow copy another way
+        // const clone=Object.assign({},user)
+        // user.per.addr="2343";
+        // console.log(clone)
+
+        // deep copy
+        //One way to make a deep copy of a JavaScript object, if it can be serialized, 
+        //is to use JSON.stringify() to convert the object to a JSON string, 
+        //and then JSON.parse() to convert the string back into a (completely new) JavaScript object
+
+        // const clone=JSON.parse(JSON.stringify(user));
+        // clone.per.addr="567"
+        // console.log(user,clone)
+    </script>
+</body>
+
+</html>

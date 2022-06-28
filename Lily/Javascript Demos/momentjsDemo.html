@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="https://momentjs.com/downloads/moment-timezone-with-data.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let now = moment();
+        console.log(now.format());
+
+        moment().format('MMMM Do YYYY, h:mm:ss a'); // June 12th 2022, 3:08:43 pm
+        let s1 = moment().format('dddd'); // Sunday
+        moment().format("MMM Do YY"); // Jun 12th 22
+        let s3 = moment().format('YYYY [this year is] YYYY'); // 2022 escaped 2022
+        let s4 = moment().format();
+        console.log(s4)
+    </script>
+    <script>
+        var jun = moment("2014-06-01T12:00:00Z");
+        var dec = moment("2014-12-01T12:00:00Z");
+        let s6 = jun.tz('Asia/Tokyo').format('ha z'); // 9pm JST
+        let s7 = dec.tz('Asia/Tokyo').format('ha z'); // 9pm JST
+
+        let s8 = jun.tz('Australia/Sydney').format('ha z'); // 10pm EST
+        let s9 = dec.tz('Australia/Sydney').format('ha z'); // 11pm EST
+
+        console.log(s6 + '\n', s7 + '\n', s8 + '\n', s9)
+    </script>
+</body>
+
+</html>

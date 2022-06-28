@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var req1 = /ABC\001/;
+        //var req2 = new RegExp('ABC\\001');
+
+        var re = /^\d{3}\-\d{3,8}$/;
+        // console.log(re.test('010-12345')); // true
+        // console.log(re.test('010-1234x')); // false
+        // console.log(re.test('010 12345')); // false
+
+        //split:
+        var s = 'a b   c';
+        var ss = s.split('');
+        //console.log(ss);
+
+        var ss1 = s.split(/\s+/); //(/\s/)
+        console.log(ss1);
+
+        var ss2 = s.split(/[\s\,]+/); //
+        //console.log(ss2);
+
+        var ss3 = s.split(/[\s\,\;]+/); //
+        //console.log(ss3);
+
+
+        //group
+        var re = /^(\d{3})-(\d{3,8})$/;
+        a = re.exec('010-12345'); // ['010-12345', '010', '12345']
+        b = re.exec('010 12345'); // null
+
+        // console.log(a);
+        // console.log(b);
+
+        //glabal search
+        // var r1 = /test/gi;
+        // var r2 = new RegExp('test', 'g');
+
+        var s = 'javascript, VBScript, JScript and ECMAScript';
+        var re = /[a-zA-Z]+Script/gi;
+
+        console.log(re.exec(s));
+        console.log(re.exec(s));
+
+
+    </script>
+</body>
+
+</html>

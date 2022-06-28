@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Get a string in JSON format, we directly use JSON.parse() to turn it into a JavaScript object:
+        var d=JSON.parse('[1,2,3,true]'); // [1, 2, 3, true]
+        console.log(d);
+        // JSON.parse('{"name":"Tom","age":14}'); // Object {name: 'Tom', age: 14}
+        // JSON.parse('true'); // true
+        // JSON.parse('123.45'); // 123.45
+
+        //JSON.parse() can also receive a function to convert the parsed properties
+        // var obj = JSON.parse('{"name":"Tom","age":14}', function (key, value) {
+        //     if (key === 'name') {
+        //         return value + '.classmate';
+        //     }
+        //     return value;
+        // });
+        // console.log(JSON.stringify(obj)); // {name: 'Tom', age: 14}
+    </script>
+</body>
+
+</html>

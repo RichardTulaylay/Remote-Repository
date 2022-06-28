@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // prototype:
+        var Student = {
+            name: 'Robot',
+            height: 1.2,
+            run: function () {
+                console.log(this.name + ' is running...');
+            }
+        };
+
+        function createStudent(name) {
+            // Create a new object based on the Student prototype:
+            var s = Object.create(Student);
+            // Initialize new object:
+            s.name = name;
+            return s;
+        }
+
+        var Tom = createStudent('Tom');
+        Tom.run(); // Tom is running...
+        Tom.__proto__ === Student; // true
+    </script>
+</body>
+
+</html>

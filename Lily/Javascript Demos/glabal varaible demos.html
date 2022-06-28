@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //variable
+        // var course = 'Learn JavaScript';
+        // alert(course); // 'Learn JavaScript'
+        // alert(window.course); // 'Learn JavaScript'
+
+        //function
+        // function foo() {
+        //     alert('foo');
+        // }
+
+        // foo(); // directly call foo()
+        // window.foo(); // use window.foo() to call 
+
+
+        //glabal function
+        window.alert('Call window.alert()');
+        // Save alert to another variable:
+        var old_alert = window.alert;
+        // Assign a new function to alert:
+        window.alert = function () {}
+    </script>
+</body>
+
+</html>

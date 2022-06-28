@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script>
+        function foo() {
+            var x = 1;
+            x = x + 1;
+        }
+
+        x = x + 2;
+        foo();
+    </script> -->
+    <!-- <script>
+        function foo() {
+            var x = 1;
+            x = x + 1;
+        }
+
+        function bar() {
+            var x = 'A';
+            x = x + 'B';
+        }
+    </script> -->
+
+    <!-- <script>
+        function foo() {
+            var x = 1;
+
+            function bar() {
+                var y = x + 1; // bar can access the foo's x!
+            }
+            var z = y + 1; // ReferenceError! foo can't access bar'y!
+        }
+    </script>  -->
+    <script>
+        function foo() {
+            var x = 1;
+
+            function bar() {
+                var x = 'A';
+                console.log('x in bar() = ' + x); // 'A'
+            }
+            console.log('x in foo() = ' + x); // 1
+            bar();
+        }
+
+        foo();
+    </script>
+</body>
+
+</html>

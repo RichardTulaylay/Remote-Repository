@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Student constructor
+        function Student(name) {
+            this.name = name;
+            this.hello = function () {
+                alert('Hello, ' + this.name + '!');
+            }
+        }
+
+        //Now, we want to extend PrimaryStudent based on Student, we can define PrimaryStudent first
+        // PrimaryStudent constructor :
+        function PrimaryStudent(props) {
+            Student.call(this, props); //Calling the Student constructor is not the same as inheriting from Student
+            this.grade = props.grade || 1;
+        }
+
+        //new PrimaryStudent() ----> PrimaryStudent.prototype ----> Object.prototype ----> null
+        //new PrimaryStudent() ----> PrimaryStudent.prototype ----> Student.prototype ----> Object.prototype ----> null
+
+        //PrimaryStudent.prototype = Student.prototype;--wrong
+
+        //We have to implement the correct prototype chain 
+        //with the help of an intermediate object whose prototype should point to Student.prototype
+
+        // empty function F:
+        function F() {}
+
+        // F property points to Student.prototype:
+        F.prototype = Student.prototype;
+
+        // Point the prototype of PrimaryStudent to a new F object, 
+        //and the prototype of F object points exactly to Student.prototype:
+        PrimaryStudent.prototype = new F();
+
+        // Fix the constructor of the PrimaryStudent prototype to PrimaryStudent:
+        PrimaryStudent.prototype.constructor = PrimaryStudent;
+
+        // Continuing with the definition of the method on the 
+        //PrimaryStudent prototype (that is, the new F() object).
+        PrimaryStudent.prototype.getGrade = function () {
+            return this.grade;
+        };
+
+
+        var Tom = new PrimaryStudent({
+            name: 'Tom',
+            grade: 2
+        });
+        Tom.name; // 'Tom'
+        Tom.grade; // 2
+
+        // validate proto:
+        Tom.__proto__ === PrimaryStudent.prototype; // true
+        Tom.__proto__.__proto__ === Student.prototype; // true
+
+        // Verifying Inheritance Relationships:
+        Tom instanceof PrimaryStudent; // true
+        Tom instanceof Student; // true
+
+
+        //The function F is only used for bridging, we only create a new F() instance, 
+        //and, without changing the prototype chain of the original Student definition.
+
+        //If the inheritance action is wrapped in an inherits() function, 
+        //it is also possible to hide the definition of F and simplify the code
+
+        function inherits(Child, Parent) {
+            var F = function () {};
+            F.prototype = Parent.prototype;
+            Child.prototype = new F();
+            Child.prototype.constructor = Child;
+        }
+
+        
+        function Student(props) {
+            this.name = props.name || 'Unnamed';
+        }
+
+        Student.prototype.hello = function () {
+            alert('Hello, ' + this.name + '!');
+        }
+
+        Student.prototype.age = 20;
+
+        function PrimaryStudent(props) {
+            Student.call(this, props);
+            this.grade = props.grade || 1;
+        }
+
+    
+        // Implementing a prototype inheritance chain:
+        inherits(PrimaryStudent, Student);
+
+        // Bind other methods to the PrimaryStudent prototype:
+        PrimaryStudent.prototype.getGrade = function () {
+            return this.grade;
+        };
+        console.log(PrimaryStudent.prototype.age);
+    </script>
+</body>
+
+</html>

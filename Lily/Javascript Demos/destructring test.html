@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Here’s an example of how an array is destructured into variables:
+        // let arr = ["lily", "Jiang"];
+        // let [firstName, familyName] = arr;
+        // console.log(firstName, familyName);
+
+        //Now we can work with variables instead of array members.
+        //It looks great when combined with split or other array-returning methods:
+
+        // let [firstName, surname] = "John Smith".split(' ');
+        // alert(firstName); // John
+        // alert(surname); // Smith
+
+
+        //It’s called “destructuring assignment,” 
+        //because it “destructurizes” by copying items into variables. 
+        //But the array itself is not modified.
+        //It’s just a shorter way to write:
+
+        // let [firstName, surname] = arr;
+        // let firstName = arr[0];
+        // let surname = arr[1];
+
+        //Ignore elements using commas
+        //Unwanted elements of the array can also be thrown away via an extra comma:
+        // second element is not needed
+
+        // let [firstName, , title] = ["Julius", "Caesar", "Consul", "of the Roman Republic"];
+
+        // alert(ss); // Consul
+
+        // Works with any iterable on the right - side… Actually, 
+        //we can use it with any iterable, not only arrays:
+
+       // let [a, b, c] = "abc"; // ["a", "b", "c"]
+        // let [one, two, three] = new Set([1, 2, 3]);
+        // console.log(one, two, three);
+
+        //That works, because internally a destructuring assignment works by 
+        //iterating over the right value. 
+        //It’s a kind of syntax sugar for calling for..of over the value 
+        //to the right of = and assigning the values.
+
+        // var s = new Set([1, 2, 3]);
+        // for (let ss of s) {
+        //     console.log(ss);
+        // }
+
+    </script>
+    <script>
+        //Assign to anything at the left-side
+
+        // let user1 = {};
+        // [user.name, user.surname] = "John Smith".split(' ');
+
+        // alert(user1.name); // John
+        // alert(user1.surname); // Smith
+    </script>
+
+    <script>
+        //Looping with.entries()
+        //We can use it with destructuring to loop over keys-and-values of an object:
+        // let user2 = {
+        //     name: "John",
+        //     age: 30
+        // };
+
+        // console.log(Object.entries(user2));
+
+        // // loop over keys-and-values
+        // for (let [key, value] of Object.entries(user2)) {
+        //     alert(`${key}:${value}`); // name:John, then age:30
+        // }
+
+        // //The similar code for a Map is simpler, as it’s iterable:
+
+        // let user3 = new Map();
+        // user3.set("name", "John");
+        // user3.set("age", "30");
+
+        // // Map iterates as [key, value] pairs, very convenient for destructuring
+        // for (let [key, value] of user3) {
+        //     alert(`${key}:${value}`); // name:John, then age:30
+        // }
+    </script>
+
+    <script>
+        //The rest‘…’
+        // Usually,if the array is longer than the list at the left, the“ extra” items are omitted.
+
+        // For example, here only two items are taken, and the rest is just ignored:
+
+        // let [name1, name2] = ["Julius", "Caesar", "Consul", "of the Roman Republic"];
+
+        // alert(name1); // Julius
+        // alert(name2); // Caesar
+        // Further items aren't assigned anywhere
+
+        // If we’d like also to gather all that follows – 
+        //we can add one more parameter that gets “the rest” using three dots "...":
+
+        //let [name11, name21, ...rest] = ["Julius", "Caesar", "Consul", "of the Roman Republic"];
+
+        //rest is array of items, starting from the 3rd one
+        // alert(name11);
+        // alert(name21)
+        // alert(rest[0]); // Consul
+        // alert(rest[1]); // of the Roman Republic
+        // alert(rest.length); // 2
+
+
+        //The value of rest is the array of the remaining array elements.
+
+        //We can use any other variable name in place of rest, just make sure it has three dots before it and goes last in
+        //the destructuring assignment.
+
+        //let [name12, name22, ...titles] = ["Julius", "Caesar", "Consul", "of the Roman Republic"];
+        // now titles = ["Consul", "of the Roman Republic"]
+    </script>
+    <script>
+        //If the array is shorter than the list of variables at the left, 
+        //there’ll be no errors. Absent values are considered undefined:
+
+        // let [firstName1, surname] = [];
+
+        // alert(firstName1); // undefined
+        // alert(surname); // undefined
+
+        //If we want a “default” value to replace the missing one, we can provide it using =:
+
+        // default values
+        // let [name = "Guest", surname1 = "Anonymous"] = ["Julius"];
+
+        // alert(name); // Julius (from array)
+        // alert(surname1); // Anonymous (default used)
+
+        // Default values can be more complex expressions or even function calls. 
+        //They are evaluated only if the value is not provided.
+
+        // runs only prompt for surname
+        // let [name = prompt('name?'), surname = prompt('surname?')] = ["Julius"];
+
+        // //alert(name); // Julius (from array)
+        // alert(surname); // whatever prompt gets
+    </script>
+
+    <script>
+        //The destructuring assignment also works with objects.
+        //let {var1, var2} = {var1:…, var2:…}
+        //We should have an existing object on the right side, that we want to split into variables.
+        //The left side contains an object-like “pattern” for corresponding properties. 
+
+        let options = {
+            title: "Menu",
+            width: 100,
+            height: 200
+        };
+
+        // let {
+        //     title,
+        //     width,
+        //     height
+        // } = options;
+
+        // alert(title); // Menu
+        // alert(width); // 100
+        // alert(height); // 200
+
+        // changed the order in let {...}
+        // let {
+        //     height,
+        //     width,
+        //     title
+        // } = {
+        //     title: "Menu",
+        //     height: 200,
+        //     width: 100
+        // }
+
+        // console.log(height);
+
+        //The pattern on the left side may be more complex and specify the mapping between properties and variables.
+
+        //If we want to assign a property to a variable with another name, 
+        //for instance, make options.width go into the variable named w, 
+        //then we can set the variable name using a colon:
+
+        // let options1 = {
+        //     title: "Menu",
+        //     width: 100,
+        //     height: 200
+        // };
+
+        // { sourceProperty: targetVariable }
+        // let {
+        //     width: w,
+        //     height: h,
+        //     title
+        // } = options1;
+
+        // // width -> w
+        // // height -> h
+        // // title -> title
+
+        // alert(title); // Menu
+        //  alert(w); // 100
+        // alert(h); // 20
+
+        
+
+
+        //  For potentially missing properties we can set default values using "=", like this:
+
+        // let options1 = {
+        //     title: "Menu"
+        // };
+
+        // let {
+        //     width = 100, height = 200, title
+        // } = options1;
+
+        // alert(title); // Menu
+        // alert(width); // 100
+        // alert(height); // 200
+
+
+        // In the code below prompt asks for width, but not for title:
+        // let options = {
+        //     title: "Menu"
+        // };
+
+        // let {
+        //     width = prompt("width?"), title = prompt("title?")
+        // } = options;
+
+        // alert(title); // Menu
+        // alert(width); // (whatever the result of prompt is)
+
+
+        // We also can combine both the colon and equality:
+
+        // let options = {
+        //     title: "Menu"
+        // };
+
+        // let {
+        //     width: w = 100,
+        //     height: h = 200,
+        //     title
+        // } = options;
+
+        // alert(title); // Menu
+        // alert(w); // 100
+        // alert(h); // 200
+
+        //If we have a complex object with many properties, we can extract only what we need:
+    //     let options = {
+    //         title: "Menu",
+    //         width: 100,
+    //         height: 200
+    //     };
+
+    //    // only extract title as a variable
+    //     let {
+    //         title
+    //     } = options;
+
+    //     alert(title); // Menu
+    </script>
+
+    <script>
+        //What if the object has more properties than we have variables? 
+        //Can we take some and then assign the “rest” somewhere?
+
+        //We can use the rest pattern, just like we did with arrays. 
+        //It’s not supported by some older browsers (IE, use Babel to polyfill it), but works in modern ones.
+
+        // It looks like this:
+
+        // let options = {
+        //     title: "Menu",
+        //     height: 200,
+        //     width: 100
+        // };
+
+        // // title = property named title
+        // // rest = object with the rest of properties
+        // let {
+        //     title,
+        //     ...rest1
+        // } = options;
+
+        // // now title="Menu", rest={height: 200, width: 100}
+        // alert(rest1.height); // 200
+        // alert(rest1.width); // 100
+    </script>
+
+    <script>
+        //an error:
+
+        //let title, width, height;
+
+        // error in this line
+        // {
+        //     title,
+        //     width,
+        //     height
+        // } = {
+        //     title: "Menu",
+        //     width: 200,
+        //     height: 100
+        // };
+
+        //The problem is that JavaScript treats {...} in the main code flow as a code block. 
+        //Such code blocks can be used to group statements, like this:
+
+        // {
+        //     // a code block
+        //     let message = "Hello";
+        //     // ...
+        //     alert(message);
+        // }
+
+        // let title, width, height;
+
+        // // okay now
+        // ({
+        //     title,
+        //     width,
+        //     height
+        // } = {
+        //     title: "Menu",
+        //     width: 200,
+        //     height: 100
+        // });
+
+        // alert(title); // Menu
+        //To show JavaScript that it’s not a code block, we can wrap the expression in parentheses (...):
+    </script>
+    <script>
+        //If an object or an array contain other nested objects and arrays, 
+        //we can use more complex left-side patterns to extract deeper portions.
+
+        //In the code below options has another object in the property size and an array in the property items. 
+        //The pattern on the left side of the assignment has the same structure to extract values from them:
+
+        // let options2 = {
+        //     size: {
+        //         width: 100,
+        //         height: 200
+        //     },
+        //     items: ["Cake", "Donut"],
+        //     extra: true
+        // };
+
+        // // // destructuring assignment split in multiple lines for clarity
+        // let {
+        //     size: { // put size here
+        //         width,
+        //         height
+        //     },
+        //     items: [item1, item2], // assign items here
+        //     title = "Menu" // not present in the object (default value is used)
+        // } = options2;
+
+        // alert(title); // Menu
+        // alert(width); // 100
+        // alert(height); // 200
+        // alert(item1); // Cake
+        // alert(item2); // Donut
+    </script>
+
+    <script>
+        //Smart function parameters
+    </script>
+
+
+
+
+</body>
+
+</html>

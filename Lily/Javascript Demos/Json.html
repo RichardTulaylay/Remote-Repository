@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var Tom = {
+            name: "Tom",
+            age: 14,
+            gender: true,
+            height: 1.65,
+            grade: null,
+            "middle-school": "\"W3C\" Middle School",
+            skills: ['JavaScript', 'Java', 'Python', 'Lisp']
+        };
+
+       // var s = JSON.stringify(Tom, null,' ');
+  
+
+
+        //The second parameter is used to control how to filter the key value of the object. 
+        //If we only want to output the specified property, we can pass in Array
+
+      //var ss = JSON.stringify(Tom, ['name', 'skills'], ' ')
+
+      // console.log(ss);
+
+        // console.log(ss);
+
+        //You can also pass in a function, 
+        //so that each key-value pair of the object will be processed first by the function
+
+        // function convert(key, value) {
+        //     if (typeof value === 'string') {
+        //         return value.toUpperCase();
+        //     }
+        //     return value;
+        // }
+
+        // var convertstr = JSON.stringify(Tom, convert, '  ');
+        // console.log(convertstr)
+
+        //If we also want to precisely control how to serialize Tom,
+        //we can define a toJSON() method for Tom to directly 
+        //return the data that should be serialized by JSON:
+
+    //     var Tom = {
+    //         name: 'Tom',
+    //         age: 14,
+    //         gender: true,
+    //         height: 1.65,
+    //         grade: null,
+    //         'middle-school': '\"W3C\" Middle School',
+    //         skills: ['JavaScript', 'Java', 'Python', 'Lisp'],
+    //         toJSON: function () {
+    //             return { // Only output name and age，and change the key：
+    //                 'Name': this.name,
+    //                 'Age': this.age
+    //             };
+    //         }
+    //     };
+
+    //    var ss= JSON.stringify(Tom); // '{"Name":"Tom","Age":14}'
+    //    console.log(ss)
+
+        // var object = {
+        //     name: "lily",
+        //     color: ["green", "red"],
+        //     company: {
+        //         name: "rio",
+        //         address: "bris"
+
+        //     }
+        // }
+
+        // var obj1 = [{
+        //     name: "lily1",
+        //     color: ["green", "red"],
+        //     company: {
+        //         name: "rio",
+        //         address: "bris"
+
+        //     }
+        // }, {
+        //     name: "lily2",
+        //     color: ["green", "red"],
+        //     company: {
+        //         name: "rio",
+        //         address: "bris"
+
+        //     }
+        // }]
+
+        // let a = JSON.stringify(obj1);
+        // console.log(a);
+    </script>
+</body>
+
+</html>

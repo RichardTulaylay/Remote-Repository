@@ -1,0 +1,29 @@
+Create a new 1.txt file in the local workspace and stash it with the git stash command, with the message "a txt file is stored".
+
+anwser:
+git add .
+git stash save "a txt file is stored"
+
+
+View information about all staged files
+
+git stash list
+
+Fetch the most recent record that was staged and remove it from the record
+
+git stash pop
+
+How to remove a recently staged record without removing it from the record
+
+git stash apply
+
+Try to do the above with sourcetree
+
+
+Git stash commond lines:
+git stash
+git stash save "stash message"
+git stash pop
+git stash drop
+git stash clear
+git stash apply

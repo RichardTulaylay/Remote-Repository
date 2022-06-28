@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function slow(x) {
+            return x;
+        }
+
+        function catchingDecorator(func) {
+            const cache = new Map();
+            return function (x) {
+                if (cache.has(x)) {
+                    return cache.get(x);
+                }
+
+                let result=func.call(this,x);
+                cache.set(x,result);
+                return result;
+            };
+        }
+
+        slow=catchingDecorator(slow);
+        alert(slow(1));
+        alert("Again"+slow(1));
+        alert(slow(2));
+        alert("Again:"+slow(2));
+
+    </script>
+</body>
+
+</html>

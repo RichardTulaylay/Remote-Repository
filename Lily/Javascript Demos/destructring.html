@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //form approach
+        var array = ['hello', 'JavaScript', 'ES6'];
+        var x = array[0];
+        var y = array[1];
+        var z = array[2];
+
+        //ES6
+        // If the browser supports Destructuring assignment, no error will be reported:
+        var [x, y, z] = ['hello', 'JavaScript', 'ES6'];
+
+        // x, y, z are assigned to the corresponding elements of the array:
+        console.log('x = ' + x + ', y = ' + y + ', z = ' + z);
+
+        //If the array itself has nesting, 
+        //it can also be Destructuring and assigned in the following form, 
+        //taking care to keep the nesting level and position consistent.
+        let [x, [y, z]] = ['hello', ['JavaScript', 'ES6']];
+        x; // 'hello'
+        y; // 'JavaScript'
+        z; // 'ES6'
+
+
+        //Destructuring assignment can also ignore certain elements.
+        // Ignore the first two elements and assign only the third element to z
+        let [, , z] = ['hello', 'JavaScript', 'ES6'];
+        z; // 'ES6'
+
+        //When Destructuring an object for assignment, 
+        //it is also possible to assign values to nested object properties directly, 
+        //as long as the corresponding hierarchy is consistent
+
+        var person = {
+            name: 'Tom',
+            age: 20,
+            gender: 'male',
+            passport: 'G-12345678',
+            school: 'No.4 middle school'
+        };
+        var {
+            name,
+            age,
+            passport
+        } = person;
+        console.log('name = ' + name + ', age = ' + age + ', passport = ' + passport);
+
+        var person = {
+            name: 'Tom',
+            age: 20,
+            gender: 'male',
+            passport: 'G-12345678',
+            school: 'No.4 middle school',
+            address: {
+                city: 'Beijing',
+                street: 'No.1 Road',
+                zipcode: '100001'
+            }
+        };
+        var {
+            name,
+            address: {
+                city,
+                zip
+            }
+        } = person;
+        name; // 'Tom'
+        city; // 'Beijing'
+        zip; // undefined, Because the property name is zipcode and not zip
+        // Note: address is not a variable, 
+        //but is intended for city and zip to get the properties of a nested address object
+        address; // Uncaught ReferenceError: address is not defined
+
+
+        //When using Destructuring assignment to an object property, 
+        //if the corresponding property does not exist,
+        //the variable will be assigned to undefined, 
+        //which is consistent with getting undefined by referencing a non-existent property. 
+        //If the name of the variable to be used does not match the name of the property, 
+        //it can be obtained using the following syntax.
+        var person = {
+            name: 'Tom',
+            age: 20,
+            gender: 'male',
+            passport: 'G-12345678',
+            school: 'No.4 middle school'
+        };
+
+        // Assign the passport property to the variable id:
+        let {
+            name,
+            passport: id
+        } = person;
+        name; // 'Tom'
+        id; // 'G-12345678'
+        // Note: passport is not a variable, but is intended for the variable id to get the passport attribute
+        passport; // Uncaught ReferenceError: passport is not defined
+    </script>
+    <script>
+        //Destructuring assignments can also use default values,
+        // thus avoiding the problem of returning undefined for non-existent properties.
+
+        var person = {
+            name: 'Tom',
+            age: 20,
+            gender: 'male',
+            passport: 'G-12345678'
+        };
+
+        // If the person object does not have a single property, the default assignment is true:
+        var {
+            name,
+            single = true
+        } = person;
+        name; // 'Tom'
+        single; // true
+    </script>
+    <script>
+        //In some cases, if a variable has already been declared and is assigned again, 
+        //the correct way to write it will also report a syntax error.
+        // Declaring variables:
+        var x, y;
+        // Destructuring assignment:
+        //{ x, y} = {name: 'Tom',x: 100,y: 200};
+        // error: Uncaught SyntaxError: Unexpected token =
+
+        // This is because the JavaScript engine treats statements beginning with { as blocks, 
+        //so = is no longer legal. The solution is to enclose it in parentheses.
+
+        ({
+            x,
+            y
+        } = {
+            name: 'Tom',
+            x: 100,
+            y: 200
+        });
+    </script>
+    <script>
+        //swap x, y
+        var x = 1,
+            y = 2;
+        [x, y] = [y, x]
+
+        //Quickly get the domain name and path of the current page
+        var {
+            hostname: domain,
+            pathname: path
+        } = location;
+
+        //If a function takes an object as an argument, 
+        //then the properties of the object can be bound directly to the variable using destructuring.
+        function buildDate({
+            year,
+            month,
+            day,
+            hour = 0,
+            minute = 0,
+            second = 0
+        }) {
+            return new Date(year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second);
+        }
+
+        buildDate({
+            year: 2017,
+            month: 1,
+            day: 1
+        });
+
+        buildDate({
+            year: 2017,
+            month: 1,
+            day: 1,
+            hour: 20,
+            minute: 15
+        });
+        // Sun Jan 01 2017 20:15:00 GMT+0800 (CST)
+    </script>
+    <script>
+        var ooo={
+            aa:23,
+            bb:22
+        }
+        var [aa,bb=22]=[1,2];
+
+        console.log(aa);
+        console.log(bb);
+    </script>
+</body>
+
+</html>

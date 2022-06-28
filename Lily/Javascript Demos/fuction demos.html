@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //function
+        // function add() {
+
+        // }
+
+        // var c = function () {
+
+        // }
+
+        // var d = (a) => {
+        //     console.log(a);
+        // }
+
+        // d("abc", 1, 2);
+
+        // //object
+        // const obj = {
+        //     name: 'lily'
+        // }
+
+        // function abc() {
+
+        // }
+
+        // var a = new abc();
+
+        // var b = new cbd();
+
+        // let aa = "a";
+        // let AA = "A";
+        // if (aa > AA) {
+        //     console.log("a>A");
+        // } else {
+        //     console.log("a<A");
+
+        // }
+
+        // function abs(x) {
+        //     if (x >= 0) {
+        //         return x;
+        //     } else {
+        //         return -x;
+        //     }
+        // }
+
+        // var abs = function (x) {
+        //     if (x >= 0) {
+        //         return x;
+        //     } else {
+        //         return -x;
+        //     }
+        // };
+
+        //console.log(abs(10));
+
+        //console.log(abs(10, 'blablabla')); 
+       // console.log(abs(-9, 'haha', 'hehe', null)); 
+        //console.log(abs());
+
+        //change:
+        function abs(x) {
+            if (typeof x !== 'number') {
+                throw 'Not a number';
+            }
+            if (x >= 0) {
+                return x;
+            } else {
+                return -x;
+            }
+        }
+        console.log(abs(1));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            name: "lily",
+            age: 30,
+            address: "brisbane",
+            company: {
+                name: "rio",
+                title: "developer"
+            },
+
+            setName: function setValue(value) {
+                this.name = value;
+            }
+        }
+
+        obj.setName("tom");
+
+        delete obj.name;
+        delete obj["age"]
+
+        //obj.name = "lucy";
+        console.log(obj.name, obj["name"])
+        console.log(obj.age)
+        console.log(obj.company.name, obj["company"]["name"])
+    </script>
+</body>
+
+</html>

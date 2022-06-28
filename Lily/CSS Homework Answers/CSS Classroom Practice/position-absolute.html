@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 10px;
+            padding: 5px;
+            font-size: 12px;
+            line-height: 25px;
+        }
+
+        #father {
+            border: 1px #666 solid;
+            padding: 0px;
+            /* position: relative; */
+        }
+
+        #first {
+            border: 1px rgb(82, 19, 184) dashed;
+            background-color: chartreuse;
+        }
+
+        #second {
+            border: 1px rgb(190, 10, 10) dashed;
+            background-color: chocolate;
+            position: absolute;
+            left: 20px;
+        }
+
+        #third {
+            border: 1px rgb(224, 17, 173) dashed;
+            background-color: forestgreen;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="father">
+        <div id="first">the first box</div>
+        <div id="second">the second box</div>
+        <div id="third">the third box</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(3, 100px);
+
+      /* justify-items--Set the horizontal position of the cell contents (left-centre-right) */
+      /* align-itemss--Set the vertical position of the cell contents (top middle and bottom). */
+      /* values: start | end | center | stretch（by default） */
+      justify-items: stretch;
+      align-items: center;
+      /* place-items is align-items and justify-items */
+      /* place-items: start end; */
+      /* if the second doesn't have value，then it thinks the second value equals the first value */
+      /* place-items: center; */
+    }
+
+    .box .item {
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      background-color: #ccc;
+    }
+    /* Horizontal and vertical centering */
+    .aaa {
+      width: 500px;
+      height: 500px;
+      display: grid;
+      place-items: center;
+      background-color: #999;
+    }
+    .bbb {
+      width: 50px;
+      height: 50px;
+      background-color: bisque;
+    } 
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+    <div class="item">9</div>
+  </div>
+
+  <!-- --------Horizontal and vertical centering--------- -->
+  <!-- <div class="aaa">
+    <div class="bbb"></div>
+  </div> -->
+  <!-- --------Horizontal and vertical centering--------- -->
+</body>
+
+</html>

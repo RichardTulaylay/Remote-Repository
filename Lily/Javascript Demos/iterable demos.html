@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const car = {
+        //     brakes: '2',
+        //     tires: '4'
+        // }
+
+        // for (let i in car) {
+        //     console.log(car[i]); // "2", "4"
+        // }
+
+    //     for (let i of car) {
+    //         console.log(i); // TypeError: car is not iterable
+    //    }
+
+        //const rgb = ['red', 'green', 'blue']
+        // for (let key in rgb) {
+        //     console.log(key); // logs "0", "1", "2"
+        // }
+
+        // for (let key of rgb) {
+        //     console.log(key); // 
+        // }
+
+        // var a = ['A', 'B', 'C'];//array
+        // var s = new Set(['A', 'B', 'C']);//set
+        // var m = new Map([
+        //     [1, 'x'],
+        //     [2, 'y'],
+        //     [3, 'z']
+        // ]);
+        // for (var x of a) { // Array
+        //     console.log(x);
+        // }
+        // for (var x of s) { // set
+        //     console.log(x);
+        // }
+        // for (var x of m) { // Map
+        //     console.log(x[0] + '=' + x[1]);
+        // }
+
+
+       var a = ['A', 'B', 'C'];
+        // a.name = 'Hello';
+        // console.log(a);
+        // for (var x in a) {
+        //     console.log(x); // '0', '1', '2', 'name'
+        // }
+
+        // for (var x of a) {
+        //     console.log(x); // 'A', 'B', 'C'
+        // }
+
+    //    a.forEach(function (element, index, array) {
+    //        element: Points to the value of the current element
+    //        index: Point to the current index
+    //         array: Points to the Array object itself
+    //         console.log(element + ', index = ' + index);
+    //     });
+
+       // Set is similar to Array, but Set has no index, 
+       // so the first two parameters of the callback function are the elements themselves.
+        // var s = new Set(['A', 'B', 'C']);
+        // s.forEach(function (element, sameElement, set) {
+        //    // console.log(element);
+        // });
+
+        var m = new Map([
+            [1, 'x'],
+            [2, 'y'],
+            [3, 'z']
+        ]);
+        m.forEach(function (value, key, map) {
+            console.log(value,key);
+        });
+    </script>
+</body>
+
+</html>

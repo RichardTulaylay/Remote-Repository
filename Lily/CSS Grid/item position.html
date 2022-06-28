@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      display: grid;
+      /* Specify column width, row height and grid line name */
+      grid-template-columns: [c1] 100px [c2] 100px [c3] 100px [c4];
+      grid-template-rows: [r1] 100px [r2] 100px [r3] 100px [r4];
+      grid-auto-rows: 100px;
+    }
+
+    .box .item {
+      background-color: #ccc;
+    }
+
+    /* The position of the item can be specified by specifying the four borders of the item 
+    and on which grid line each is positioned. */
+    /* 
+      rid-column-start：The vertical grid line where the left border is located
+      grid-column-end：The vertical grid line where the right border is located
+      grid-row-start：The horizontal grid line where the upper border is located
+      grid-row-end：The horizontal grid line where the bottom border is located
+    */
+    /* These are non-required attributes, those not specified will take the default position */
+    .box .item.item-2 {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+    /* The values of these four attributes can be 
+    specified as the name of the grid line in addition to the number of grid lines. */
+    /* .box .item.item-2 {
+      grid-column-start: c1;
+      grid-column-end: c3;
+    } */
+
+    /* The values of these four attributes can also use the span keyword to indicate "spanning", 
+    i.e. how many grids are spanned between the left and right borders (top and bottom borders). */
+    /* The left border spans 2 grids from the right border. */
+    /* .box .item.item-2 {
+      grid-column-start: span 2;
+    } */
+    /* Equivalent */
+    /* .box .item.item-2 {
+      grid-column-end: span 2;
+    } */
+    
+
+    /*  The grid-column attribute is a combined shorthand form of grid-column-start and grid-column-end.
+    grid-row attribute is a combined shorthand form of grid-row-start attribute and grid-row-end */
+    /* .box .item.item-2 {
+      background-color: red;
+      grid-column-start: c1;
+      grid-column-end: c3;
+      grid-row-start: r1;
+      grid-row-end: r3;
+    } */
+    /* Equivalent */
+    /* .box .item.item-2 {
+      background-color: red;
+      grid-column: c1 / c3;
+      grid-row: r1 / r3;
+    } */
+    /* Use in combination with span */
+    /* .box .item.item-2 {
+      background-color: red;
+      grid-column: c1 / span 2;
+      grid-row: r1 / span 2;
+    } */
+    /*  */
+    /* .box .item.item-2 {
+      background-color: red;
+      grid-column: c1;
+      grid-row: r1;
+    } */
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="item item-1">1</div>
+    <div class="item item-2">2</div>
+    <div class="item item-3">3</div>
+    <div class="item item-4">4</div>
+    <div class="item item-5">5</div>
+    <div class="item item-6">6</div>
+    <div class="item item-7">7</div>
+    <div class="item item-8">8</div>
+    <div class="item item-9">9</div>
+  </div>
+</body>
+
+</html>

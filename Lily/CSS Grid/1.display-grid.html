@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 1. this box is using grid container。the direct chirdren elements are items */
+    /* grid – generates a block-level grid
+    inline-grid – generates an inline-level grid */
+
+    .box {
+      background-color: red;
+      display:grid;
+    }
+    p{
+      padding: 15px;
+      background-color: aqua;
+    }
+
+    .box1 {
+      background-color: greenyellow;
+      display: inline-grid;
+    }
+
+    /* 2. Using grid while setting elements as in-line elements */
+    /* .box {
+      background-color: red;
+      display: inline-grid;
+    } */
+  </style>
+</head>
+
+<body>
+  <span>foo</span>
+  <div class="box">
+    <div class="item">
+      <p>1</p>
+    </div>
+    <div class="item">
+      <p>2</p>
+    </div>
+    <div class="item">
+      <p>3</p>
+    </div>
+  </div>
+  <div class="box1">
+    <div class="item">
+      <p>1</p>
+    </div>
+    <div class="item">
+      <p>2</p>
+    </div>
+    <div class="item">
+      <p>3</p>
+    </div>
+  </div>
+  <span>bar</span>
+</body>
+
+</html>

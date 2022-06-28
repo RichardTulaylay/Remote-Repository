@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //In addition to creating an object directly with { ... } to create an object, 
+        //JavaScript can also use a constructor method to create objects. 
+        //It is used by first defining a constructor.
+
+        //is it a normal function?
+        function Student(name) {
+            this.name = name;
+            this.hello = function () {
+                alert('Hello, ' + this.name + '!');
+            }
+        }
+
+        //This is indeed a normal function, 
+        //but in JavaScript it is possible to call this function with the keyword new and return an object
+        var Tom = new Student('Tom');
+        Tom.name; // 'Tom'
+        Tom.hello(); // Hello, Tom!
+
+        //Note that if you don't write new, 
+        //this is a normal function that returns undefined, 
+        //but if you write new, 
+        //it becomes a constructor that binds this to the newly created object and returns this by default 
+        //i.e., you don't need to write return this; at the end.
+
+        //The prototype chain of the newly created Tom is
+        //Tom ----> Student.prototype ----> Object.prototype ----> null
+
+        //That is, the prototype of Tom points to the prototype of the function Student. 
+        //If you create Mike and Lily again, 
+        //then the prototype of these objects is the same as Tom
+
+        //Mike ----> Student.prototype ----> Object.prototype ----> null
+
+        //The object created with new Student() also gets a constructor attribute from the prototype, 
+        //which points to the function Student itself.
+
+        Tom.constructor === Student.prototype.constructor; // true
+        Student.prototype.constructor === Student; // true
+
+        Object.getPrototypeOf(Tom) === Student.prototype; // true
+
+        Tom instanceof Student; // true
+
+        // The object pointed to by Student.prototype 
+        //is the prototype object of Tom and Mike and the prototype object itself 
+        //has a property constructor that points to the Student function itself.
+
+        //In addition, the function Student happens to have a property 
+        //prototype pointing to the prototype object of Tom and Mike,
+        //but Tom and Mike objects do not have the property prototype, 
+        //but you can use the non-standard usage of __proto__ to see it.
+
+        //Now we assume that Tom and Mike objects "inherit" from Student.
+
+        var Mike = new Student('Mike');
+        Mike.name; // 'Mike'
+        Mike.hello(); // Hello, Tom!
+        //tip:
+        Tom.name; // 'Tom'
+        Mike.name; // 'Mike'
+        Tom.hello; // function: Student.hello()
+        Mike.hello; // function: Student.hello()
+        Mike.hello === Tom.hello; // false
+
+        //Tom and Mike each have different names, which is true, 
+        //otherwise we wouldn't be able to tell who is who.
+
+        //Tom and Mike each have a hello function, 
+        //but they are two different functions, even though the function names and code are the same!
+
+        //If we create a lot of objects by new Student(), 
+        //the hello functions of these objects actually only need to share the same function, 
+        //which saves a lot of memory.
+
+        //To make the created objects share a hello function, 
+        //according to the object's property finding principle, 
+        //we just need to move the hello function to the prototype common to 
+        //Tom, Mike these objects, which is Student.prototype
+
+        function Student(name) {
+            this.name = name;
+        }
+
+        Student.prototype.hello = function () {
+            alert('Hello, ' + this.name + '!');
+        };
+
+        console.log(Mike.hello === Tom.hello);
+
+        //To distinguish between normal functions and constructors, 
+        //the convention is to capitalize the first letter of the constructor and lowercase 
+        //the first letter of the normal function, 
+        //so that some syntax checking tools such as jslint will help you detect the missing new.
+
+
+        //Finally, we can also write a createStudent() function 
+        //that encapsulates all the new operations internally. 
+        //A common programming pattern looks like this.
+
+        function Student(props) {
+            this.name = props.name || 'Anonymous'; // value is Anonymous by default
+            this.grade = props.grade || 1; // value 1 by default
+        }
+
+        Student.prototype.hello = function () {
+            alert('Hello, ' + this.name + '!');
+        };
+
+        function createStudent(props) {
+            return new Student(props || {})
+        }
+
+        //This createStudent() function has several huge advantages: 
+        //one is that it does not require new to be called, 
+        //and two is that the parameters are very flexible and can be passed without or as follows.
+
+        var Lily = createStudent({
+            name: 'Lily'
+        });
+
+        Lily.grade; // 1
+
+        //If the created object has many properties, we only need to pass certain properties that are needed, 
+        //and the rest of the properties can be used with default values. 
+        //Since the parameter is an Object, we don't need to remember the order of the parameters. 
+        //If we happen to get an object from JSON, we can create Tom directly.
+    </script>
+</body>
+
+</html>

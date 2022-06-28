@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function Person(name, age) {
+        //     this.name = name
+        //     this.age = age
+        // }
+
+        // //you can see Person has a prototype property and 
+        // //that prototype property has a constructor object which 
+        // //again points to the Person constructor function
+        // console.dir(Person)
+
+        // Person.prototype.type = 'human'
+
+        // Person.prototype.sayName = function () {
+        //     console.log(this.name)
+        // }
+
+        // var p1 = new Person("Lily", 30)
+        // var p2 = new Person("Mike", 40)
+
+        // console.log(p1.sayName === p2.sayName) // => true
+
+
+        //Now, we will add a method calculateAge() to the Prototype property 
+        //in a Person function constructor which will inherit by the different objects.
+        // function Person(name, job, yearOfBirth) {
+        //     this.name = name;
+        //     this.job = job;
+        //     this.yearOfBirth = yearOfBirth;
+        // }
+        // Person.prototype.calculateAge = function () {
+        //     console.log('The current age is: ' + (2019 - this.yearOfBirth));
+        // }
+        // console.log(Person.prototype); //we can see calculateAge() method gets added to the Prototype property
+
+        // Now, we will create 2 different objects which will inherit calculateAge() method and remember, 
+        //When a certain method(or property) is called, 
+        //it first checks inside the object but when it doesn’t find, then search moves on Object’s prototype
+
+        // function constructor
+        function Person(name, job, yearOfBirth) {
+            this.name = name;
+            this.job = job;
+            this.yearOfBirth = yearOfBirth;
+        }
+        // adding calculateAge() method to the Prototype property
+        Person.prototype.calculateAge = function () {
+            console.log('The current age is: ' + (2022 - this.yearOfBirth));
+        }
+        console.log(Person.prototype);
+
+        // creating Object Person1
+        let Person1 = new Person('Jenni', 'clerk', 1986);
+        console.log(Person1)
+        let Person2 = new Person('Madhu', 'Developer', 1997);
+        console.log(Person2)
+
+        Person1.calculateAge();
+        Person2.calculateAge();
+
+        //Here, we created two Objects Person1 and Person2 using constructor function Person, 
+        //when we called Person1.calculateAge() and Person2.calculateAge(), 
+        //First it will check whether it is present inside Person1 and Person2 object, 
+        //if it is not present, it will move Person’s Prototype object and prints the current age, 
+        //which shows Prototype property enables other objects to 
+        //inherit all the properties and methods of function constructor.
+    </script>
+</body>
+
+</html>

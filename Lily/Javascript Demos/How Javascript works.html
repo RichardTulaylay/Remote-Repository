@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h5>Youth doesn't often exist. Hurry up and fall in love</h5>
+    <hr>
+    <p>Nickname:<input type="textarea" id="Nickname"></input></p>
+    <p>Gender:<input type="radio" name="sex">Male</input><input type="radio" name="sex">Female</input></p>
+    <p>
+        City:
+        <select>
+            <option>Sydney</option>
+            <option>Melbourne</option>
+            <option>Brisbane</option>
+            <option>Perth</option>
+            <option>Adelaide</option>
+        </select>
+    </p>
+    <p>Marriage:<input type="radio" name="hun">unmarried</input><input type="radio" name="hun">married</input><input
+            type="radio" name="hun">secrecy</input></p>
+    <p>
+        Blood type:<input type="checkbox" />A
+        <input type="checkbox" />B
+        <input type="checkbox" />O
+        <input type="checkbox" />AB
+    </p>
+    <p>
+        Personal introduction:<br />
+        <textarea rows="10" cols="50">text</textarea>
+    </p>
+    <h4>I promise</h4>
+    <ul>
+        <li>Over 18 years old, single</li>
+        <li>Have a proper job</li>
+    </ul>
+    <p><input type="checkbox">I agree to all the terms</p>
+    <p>
+        <!-- <button id="btnSmit">Free registration</button>  -->
+
+        <input type="button" onclick="submit()" value="Free registration" />
+        <input type="reset"></input>
+</body>
+<script>
+    // window.onload = function () {
+    //     let btn = document.getElementById("btnSmit");
+    //     btn.click = function () {
+    //         alert("test")
+    //     }
+    // }
+
+    function submit() {
+        let nn = document.getElementById("Nickname");
+        alert(nn.value)
+    }
+</script>
+
+</html>

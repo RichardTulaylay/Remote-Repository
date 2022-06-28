@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      background-color: rebeccapurple;
+      display: grid;
+      /* Absolute units  */
+      /* grid-template-columns: 100px 100px 100px;
+      grid-template-rows: 300px; */
+
+      /* Percentage */ 
+      /* grid-template-columns: 33.333% 33.333% 33.333%;
+      grid-template-rows: 100px; */
+
+      /* repeat(Number of repetitions, value of repetition) */
+      /* grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(1, 100px); */
+
+      /* repeat(Number of repetitions, value of repetition) */
+      /* grid-template-columns: repeat(3, 100px 120px);
+      grid-template-rows: repeat(2, 50px 100px); */
+
+      /* grid   /* height: 500px;
+      grid-template-columns: repeat(auto-fill, 100px);
+      grid-template-rows: repeat(auto-fill, 100px);-template-columns: 150px 120px 100px 120px 100px 120px;
+      grid-template-rows: 50px 100px 50px 150px; */
+
+      /* auto-fill Keyword, Auto-fill, Filling a container with N identical squares */
+
+
+      /* fr Key words, Proportional relationships */
+      /* grid-template-columns: 200px 1fr 2fr;
+      grid-template-rows: 100px; */
+
+      /* minmax(Minimum value, Maximum value) */
+      /* grid-template-columns: 1fr 1fr minmax(100px, 1fr);
+      grid-template-rows: 200px; */
+
+      /* auto Keyword indicates that the length is determined by the browser itself */
+      grid-template-columns: 100px auto 100px;
+      grid-template-rows: 100px;
+    }
+    
+    .box > .item:nth-of-type(1) {
+      background-color: aqua;
+    }
+    .box > .item:nth-of-type(2) {
+      background-color: salmon;
+    }
+    .box > .item:nth-of-type(5) {
+      background-color: rgb(114, 250, 121);
+    }
+    .box > .item:nth-of-type(6) {
+      background-color: brown;
+    }
+    .box > .item:nth-of-type(9) {
+      background-color: blueviolet;
+    }
+    .box > .item:nth-of-type(16) {
+      background-color:tomato;
+    }
+    .box > .item:nth-of-type(19) {
+      background-color:yellowgreen;
+    }
+    .box > .item:nth-of-type(24) {
+      background-color:rgb(50, 205, 84);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="item">
+      <p>1</p>
+    </div>
+    <div class="item">
+      <p>2</p>
+    </div>
+    <div class="item">
+      <p>3</p>
+    </div>
+    <div class="item">
+      <p>4</p>
+    </div>
+    <div class="item">
+      <p>5</p>
+    </div>
+    <div class="item">
+      <p>6</p>
+    </div>
+    <div class="item">
+      <p>7</p>
+    </div>
+    <div class="item">
+      <p>8</p>
+    </div>
+    <div class="item">
+      <p>9</p>
+    </div>
+    <div class="item">
+      <p>10</p>
+    </div>
+    <div class="item">
+      <p>11</p>
+    </div>
+    <div class="item">
+      <p>12</p>
+    </div>
+    <div class="item">
+      <p>13</p>
+    </div>
+    <div class="item">
+      <p>14</p>
+    </div>
+    <div class="item">
+      <p>15</p>
+    </div>
+    <div class="item">
+      <p>16</p>
+    </div>
+    <div class="item">
+      <p>17</p>
+    </div>
+    <div class="item">
+      <p>18</p>
+    </div>
+    <div class="item">
+      <p>19</p>
+    </div>
+    <div class="item">
+      <p>20</p>
+    </div>
+    <div class="item">
+      <p>21</p>
+    </div>
+    <div class="item">
+      <p>22</p>
+    </div>
+    <div class="item">
+      <p>23</p>
+    </div>
+    <div class="item">
+      <p>24</p>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Pseudo-elements</title>
+<style>
+p::before {
+  content: "Now that you're here, ";
+}
+p::after {
+  content: " Not too shabby.";
+}
+p::first-letter {
+  font-size: 1.5em;
+}
+p {
+  font-family: "Segoe UI", "Helvetica", "Roboto", sans-serif;
+}
+</style>
+</head>
+<body>
+<p>let's go ahead and add some pseudo-elements to this!</p>
+</body>
+</html>

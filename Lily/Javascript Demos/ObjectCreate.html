@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const Book = {
+        //     summary: function () {
+        //         console.log(`${this.title} is written by ${this.author}.`)
+        //     }
+        // }
+        // const book1 = Object.create(Book);
+        // book1.author = "Lily";
+        // book1.title = "Hello World";
+        // console.log(book1.summary()); 
+
+
+        var user={
+
+            name:"lily",
+            age:30,
+            eat:()=>{
+                console.log(1)
+            }
+        }
+
+        var anotheruser=Object.create(user);
+        console.log(anotheruser);
+    </script>
+</body>
+
+</html>

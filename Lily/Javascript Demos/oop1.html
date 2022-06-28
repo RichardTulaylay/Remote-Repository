@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var robot = {
+            name: 'Robot',
+            height: 1.6,
+            run: function () {
+                console.log(this.name + ' is running...');
+            }
+        };
+
+        //We see that the robot object has a name, height, and can run, a bit like Tom
+        //so why not just "create" Tom from it
+        var Student = {
+            name: 'Robot',
+            height: 1.2,
+            run: function () {
+                console.log(this.name + ' is running...');
+            }
+        };
+
+        //So we renamed it Student and created Tom
+        var Tom = {
+            name: 'Tom'
+        };
+
+        //The prototype of Tom points to the object Student
+        //and it looks as if Tom is inherited from Student
+        Tom.__proto__ = Student;
+
+        //Tom has its own name property, but does not define a run() method. However, 
+        //since Tom inherits from Student, as long as Student has a run() method, 
+        //Tom can also call.
+        console.log(Tom.run());
+
+        //The difference between JavaScript's prototype chain and Java's Class 
+        //is that it doesn't have the concept of "Class", all objects are instances, 
+        //and the so-called inheritance relationship is just the prototype of one object 
+        //pointing to another object.
+
+
+        //If you point the prototype of Tom to another object.
+        var Bird = {
+            fly: function () {
+                console.log(this.name + ' is flying...');
+            }
+        };
+
+        Tom.__proto__ = Bird;
+        //Now that Tom is no longer able to run(), he has turned into a bird.
+        console.log(Tom.fly());
+
+        //You can change xiaoming from Student to Bird, or to any object during the JavaScrip code runtime.
+
+        //Please note that the above code is for demonstration purposes only. 
+        //When writing JavaScript code, do not use obj.__proto__ directly to change the prototype of an object, 
+        //and, __proto__ is not available in lower versions of IE.
+        // the Object.create() method can pass in a prototype object and create a new object based on that prototype, 
+        //but the new object has no properties whatsoever, so We can write a function to create Tom
+
+        // prototype:
+        var Student = {
+            name: 'Robot',
+            height: 1.2,
+            run: function () {
+                console.log(this.name + ' is running...');
+            }
+        };
+
+        function createStudent(name) {
+            // Create a new object based on the Student prototype:
+            var s = Object.create(Student);
+            // Initialize new object:
+            s.name = name;
+            return s;
+        }
+
+        var Tom = createStudent('Tom');
+        Tom.run(); // Tom is running...
+        Tom.__proto__ === Student; // true
+    </script>
+
+
+</body>
+
+</html>

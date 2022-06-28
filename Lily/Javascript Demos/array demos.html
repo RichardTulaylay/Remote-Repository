@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //var arrayvar = [1, 2, "hello", "test", true]
+
+        var arrtest = ["B", "f", "F", "a"]
+
+        //console.log(arrayvar.length,arrayvar[1]);
+
+        //arrayvar[3]=4;
+        //console.log(arrayvar);
+        // console.log(arrayvar[5]);
+        //console.log(arrayvar.indexOf(2));
+        //console.log(arrayvar.slice(0,3));
+        // console.log(arrayvar)
+        //arrayvar.push(2)
+        // console.log(arrayvar);
+        // arrayvar.pop();
+        // console.log(arrayvar);
+        //arrayvar.unshift(0);
+        // arrayvar.shift();
+        // console.log(arrayvar);
+
+        //arrtest.sort();
+        // console.log(arrtest);
+
+        // var arrayvar1 = [2, 9, 10, 89]
+
+        // arrayvar1.sort(function (a, b) {
+        //  return a - b;
+        // });
+        // console.log(arrayvar1);
+
+        // arrayvar1.sort()
+
+        // arrayvar.reverse();
+        // console.log(arrayvar);
+
+        // var arr = ['Microsoft', 'Apple', 'Yahoo', 'AOL', 'Excite', 'Oracle'];
+
+        // arr.splice(2, 3, 'Google', 'Facebook');
+        // console.log(arr);
+
+        // var arr = ['A', 'B', 'C'];
+        // var added = arr.concat([1, 2, 3]);
+        // console.log(arr);
+        // console.log(added);
+
+        //var arr = ['A', 'B', 'C', 1, 2, 3];
+
+        //console.log(arr.join('-'));
+
+        // let myString = 'Ryu+Ken+Chun-Li+Cammy+Guile+Sakura+Sagat+Juri';
+        // var myStringArr = myString.split("+");
+
+        // console.log(myStringArr);
+
+
+        // let myArray = [ "Ryu", "Ken", "Chun-Li", "Cammy", "Guile", "Sakura", "Sagat", "Juri" ]
+        //const newArr = myArray.ma(addindex,addindex.indx)
+        // function addindex(myelement,index)
+        // {
+        //    return myelement+"(" + index + ")";
+
+        // }
+        //   let newArray=[];
+        //     myArray.forEach((element,index)=>{
+        //        // newArray.push(element+"(" + index + ")");
+        //         newArray.unshift(element+"(" + index + ")");
+        //     })
+
+        //     console.log(newArray);
+        //     console.log(myArray);
+        // console.log(newArr);
+
+
+
+        // const arr=[1,2,3]
+        // arr.push(5);
+        // console.log(arr);
+        // arr.shift()
+        // console.log(arr);
+
+        // arr.pop()
+        // console.log(arr)
+
+
+        const users = [{
+                id: "1",
+                name: "lily",
+                age: 30
+            },
+            {
+                id: "2",
+                name: "Tom",
+                age: 33
+            },
+            {
+                id: "3",
+                name: "Lucy",
+                age: 34
+            },
+            {
+                id: "4",
+                name: "Mike",
+                age: 35
+            }
+        ]
+
+        var checkstr = users.find(function (o) {
+            if (o.id == 1) {
+                return true;
+            }
+            return false;
+        })
+
+        console.log(checkstr);
+    </script>
+</body>
+
+</html>

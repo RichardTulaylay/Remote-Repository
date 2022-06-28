@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      display: grid;
+      /* Specify column width, row height and grid line name */
+      grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(3, 100px);
+    }
+    .box .item {
+      background-color: #ccc;
+    }
+    /* justify-self Set the horizontal position of the cell content (left-centre-right), 
+    exactly the same as the justify-items property, but only for a single item */
+    /* align-self This is exactly the same as the align-items property, which only works on a single item */
+    /* start | end | center | stretch (default) */
+    .box .item.item-2 {
+      background-color: red;
+      justify-self: center;
+      align-self: center;
+    }
+    /* The place-self attribute is a combined shorthand form of the align-self and justify-self attributes. */
+    /*  If the second value is omitted, the place-self attribute will assume that the two values are equal.*/
+    .box .item.item-2 {
+      background-color: red;
+      place-self: end;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="item item-1">1</div>
+    <div class="item item-2">2</div>
+    <div class="item item-3">3</div>
+    <div class="item item-4">4</div>
+    <div class="item item-5">5</div>
+    <div class="item item-6">6</div>
+    <div class="item item-7">7</div>
+    <div class="item item-8">8</div>
+    <div class="item item-9">9</div>
+  </div>
+</body>
+</html>

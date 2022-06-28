@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        .div1
+        {
+            font-size:40px;
+            text-shadow:4px 4px 2px gray;
+        }
+		.div2
+        {
+            display: inline-block;
+            padding: 16px;
+            font-size: 32px;
+            font-weight: bold;
+            background-color: #CCC;
+            color: #ddd;
+            text-shadow: -1px 0 0 #333,  /*¡û*/
+                         0 -1px 0 #333, /*¡ü*/
+                         1px 0 0 #333,  /*¡ú*/
+                         0 1px 0 #333;  /*¡ý*/
+        }
+		 .div3
+        {
+            font-size:40px;
+            text-shadow:4px 4px 2px gray, 6px 6px 2px gray, 8px 8px 8px gray;
+        }
+		.div4
+        {
+            font-size:30px;
+            font-weight:bold;
+        }
+        .div5
+        {
+             text-stroke:1px red;
+             -webkit-text-stroke:1px red;
+        }
+		 .div6
+        {
+            font-family:Verdana;
+            font-size:50px;
+            font-weight:bold;
+            color:transparent;    
+            text-stroke:2px red;
+            -webkit-text-stroke:2px red;
+        }
+		
+        h1
+        {
+            text-align:center;
+            color:#fff;
+            font-size:48px;
+            text-shadow: 1px 1px 1px #ccc,
+                       0 0 10px #fff,
+                       0 0 20px #fff,
+                       0 0 30px #fff,
+                       0 0 40px #ff00de,
+                       0 0 70px #ff00de,
+                       0 0 80px #ff00de,
+                       0 0 100px #ff00de,
+                       0 0 150px #ff00de;
+            transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;   
+            -ms-transform-style: preserve-3d;              
+            -o-transform-style: preserve-3d;               
+            animation: run  ease-in-out 9s infinite;
+            -moz-animation: run  ease-in-out 9s infinite ;  
+            -webkit-animation: run  ease-in-out 9s infinite;    
+            -ms-animation: run  ease-in-out 9s infinite;    
+            -o-animation: run  ease-in-out 9s infinite; 
+          }
+        @keyframes run 
+        {
+            0% {transform:rotateX(-5deg) rotateY(0);}
+            50%
+            {
+                transform:rotateX(0) rotateY(180deg);   
+                text-shadow: 1px  1px 1px #ccc,
+                           0 0 10px #fff,
+                           0 0 20px #fff,
+                           0 0 30px #fff,
+                           0 0 40px #3EFF3E,
+                           0 0 70px #3EFFff,
+                           0 0 80px #3EFFff,
+                           0 0 100px #3EFFee,
+                           0 0 150px #3EFFee;
+            }
+            100% {transform:rotateX(5deg) rotateY(360deg);}
+        }
+        @-webkit-keyframes run 
+        {
+            0% {transform:rotateX(-5deg) rotateY(0);}
+            50%
+            {
+                transform:rotateX(0) rotateY(180deg);   
+                text-shadow: 1px  1px 1px #ccc,
+                           0 0 10px #fff,
+                           0 0 20px #fff,
+                           0 0 30px #fff,
+                           0 0 40px #3EFF3E,
+                           0 0 70px #3EFFff,
+                           0 0 80px #3EFFff,
+                           0 0 100px #3EFFee,
+                           0 0 150px #3EFFee;
+            }
+            100% {transform:rotateX(5deg) rotateY(360deg);}
+        }
+        @-moz-keyframes run 
+        {
+            0% {transform:rotateX(-5deg) rotateY(0);}
+            50%
+            {
+                transform:rotateX(0) rotateY(180deg);   
+                text-shadow: 1px  1px 1px #ccc,
+                           0 0 10px #fff,
+                           0 0 20px #fff,
+                           0 0 30px #fff,
+                           0 0 40px #3EFF3E,
+                           0 0 70px #3EFFff,
+                           0 0 80px #3EFFff,
+                           0 0 100px #3EFFee,
+                           0 0 150px #3EFFee;
+            }
+            100% {transform:rotateX(5deg) rotateY(360deg);}
+        }
+        @-ms-keyframes run 
+        {
+            0% {transform:rotateX(-5deg) rotateY(0);}
+            50%
+            {
+                transform:rotateX(0) rotateY(180deg);   
+                text-shadow: 1px  1px 1px #ccc,
+                           0 0 10px #fff,
+                           0 0 20px #fff,
+                           0 0 30px #fff,
+                           0 0 40px #3EFF3E,
+                           0 0 70px #3EFFff,
+                           0 0 80px #3EFFff,
+                           0 0 100px #3EFFee,
+                           0 0 150px #3EFFee;
+            }
+            100% {transform:rotateX(5deg) rotateY(360deg);}
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">text shadow</div>
+	<div class="div2">text bump</div>
+	<div class="div3">text with multiple shadows</div>
+	<div class="div4">Text is not stroked</div>
+	<div class="div5">text is stroked</div>
+	<div class="div6">Text hollow</div>
+	<div> <h1>Optional topics:This is an advanced complex application of css</h1></div>	
+</body>
+</html>

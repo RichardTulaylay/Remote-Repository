@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<s>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var m = new Map([
+        //     ['Michael', 95],
+        //     ['Bob', 75],
+        //     ['Tracy', 85]
+        // ]);
+        // console.log(m.get('Michael')); // 95
+        //     let aa = {name:"aaa"};
+        //     let aafdsa = {aa:"aaa"};
+        //     var mapvar = new Map();
+        //     mapvar.set("admin", 11);
+        //     mapvar.set("superadmin", {});
+        //     mapvar.set("superadmin", 22);
+        //     mapvar.set(aa, 22);
+        //     console.log(mapvar)
+
+        //    let aadd= mapvar.get(aa);
+        //     console.log(aadd);
+        // console.log(mapvar.has("student"));
+        // console.log(mapvar.get("admin"));
+        //    mapvar.delete("superadmin");
+        //    console.log(mapvar);
+
+
+        //set:
+
+        //var s1 = new Set(); // null Set
+  
+        // var s2 = new Set([1, 2, 3]); // including 1, 2, 3
+
+        //  console.log(s2)
+
+        // var s3 = new Set([1, 2, 3, 3, '3']);
+        // console.log(s3); // Set {1, 2, 3, "3"}
+
+        // s3.add(4);
+        // s3.add(4);
+        // console.log(s3); // Set {1, 2, 3, "3",4}
+
+        // var s4 = new Set([1, 2, 3]);
+        // s.delete(3);
+        // console.log(s4);
+
+        // var a = new Set([1, 2, 3, {
+        //         "1": "2"
+        //     },
+        //     ["3", "4"]
+        // ])
+        //console.log(a);
+
+
+        // const s = new Set();
+
+        // [2, 3, 5, 4, 5, 2, 2].forEach(x => s.add(x));
+
+        // console.log(s);
+
+        // for (let i of s) {
+        //     console.log(i); // 2 3 5 4
+        // }
+
+        // let array = [1, 2, 1, 4, 5, 3];
+        // [...new Set(array)] // [1, 2, 4, 5, 3]
+
+
+        //Common Methods:
+        // let set = new Set();
+        // console.log(set.add(1).add(2)); // Set [ 1, 2 ]
+
+        // console.log(set.delete(2)); // true
+        // console.log(set.has(2)); // false
+
+        // console.log(set.clear()); // undefined
+        // console.log(set.has(1)); // false
+        // console.log(set.size); // 0
+
+
+        //array
+        var names = ['Michael', 'Bob', 'Tracy'];
+        var scores = [95, 75, 85];
+
+        var m = new Map([
+            ['Michael', 95],
+            ['Bob', 75],
+            ['Tracy', 85]
+        ]);
+        m.get('Michael'); // 95
+
+        var m = new Map(); // null Map
+        m.set('Adam', 67); // add new key-value
+        m.set('Bob', 59);
+        m.has('Adam'); // if it exists
+        m.get('Adam'); // get value -67
+        m.delete('Adam'); // delete key 'Adam'
+        m.get('Adam'); // undefined
+    </script>
+</body>
+
+</html>

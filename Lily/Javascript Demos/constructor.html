@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Student(name) {
+            this.name = name;
+            this.hello = function () {
+                alert('Hello, ' + this.name + '!');
+            }
+        }
+
+        var Tom = new Student('Tom');
+        console.log(Tom.name); // 'Tom'
+        //Tom.hello(); // Hello, Tom!
+
+        var Lily=Student('Lily');
+       console.log(Lily.name);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo a {
+            float: left;
+            display: block;
+            height: 50px;
+            width: 50px;
+            border-radius: 10px;
+            background: red;
+            text-align: center;
+            color: chartreuse;
+            text-decoration: none;
+            margin-right: 5px;
+            font: bold 20px/50px arial;
+        }
+
+        /* 1.Attribute element with id */
+
+        /* a[id]
+        {
+            background: yellow;
+        } */
+
+        /* attribute+attribut value and attribut value can use 
+           regular expression */
+        a[id=first]
+        {
+            background: green;
+        }
+
+        /* 2.class has link element */
+
+        /* = Absolutely equal to
+        *= Contains */
+
+        /* a[class*="links"] {
+            background: yellow;
+        } */
+
+        /* select href start with http*/
+
+        /*^=start with*/
+
+        /* a[href^="http"]
+        {
+            background: pink;
+        } 
+
+        /* select href end with pdf */
+
+        /* $= end with*/
+        a[href$="pdf"]
+        {
+            background: black;
+        }
+
+    </style>
+</head>
+
+<body>
+    <p class="demo">
+        <a href="https://www.w3schools.com/" class="links item first" id="first">a1</a>
+        <a href="http://blog.lily.com" class="links item active" target="_blank" title="test" id="second">a2</a>
+        <a href="./images/123.html" class="links item active">a3</a>
+        <a href="./images/123.png" class="links item">a4</a>
+        <a href="./images/123.jpg" class="links item">a5</a>
+        <a href="abc" class="links item">a6</a>
+        <a href="a.pdf" class="links item">a7</a>
+        <a href="abc.pdf" class="links item">a8</a>
+        <a href="abc.doc" class="links item">a9</a>
+        <a href="abcd.doc" class="links item">a10</a>
+
+    </p>
+</body>
+
+</html>

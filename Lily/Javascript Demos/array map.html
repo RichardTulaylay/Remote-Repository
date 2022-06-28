@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+       
+
+        // var result00 = [];
+        // for (var i = 0; i < arr.length; i++) {
+        //     result00.push(pow(arr[i]));
+        // }
+
+        // console.log(result00);
+
+
+        var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        function pow(x) {
+            return x * x;
+        }
+       
+        var results = arr.map(pow); // [1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+        console.log(results);
+
+        
+        var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+        var results01 = arr.map(function (x) {
+            return x * x;
+        })
+        console.log(results01);
+
+        var results02 = arr.map((x) => {
+            return x * x;
+        })
+        console.log(results02);
+
+        var arr = ['1', '2', '3'];
+        r=arr.map((x)=>
+        {
+            parseInt(x);
+        })
+
+        console.log(r);
+    </script>
+</body>
+
+</html>

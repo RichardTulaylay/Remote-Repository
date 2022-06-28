@@ -1,0 +1,34 @@
+<!DOCTYPE>
+<HTML>
+<HEAD>
+<TITLE>Drop cap initial letter</TITLE>
+<STYLE type="text/css">
+	span[data-descr] {
+		position: relative;
+		text-decoration: underline;
+		color: #00F;
+		cursor: help;
+	}
+		span[data-descr]:hover::after, span[data-descr]:focus::after {
+			content: attr(data-descr);
+			position: absolute;
+			left: e;top: 24px;
+			min-width: 200px;
+			border: 1px #aaaaaa solid;
+			border-radius: 10px;
+			background-color: #ffffcc;
+			padding: 12px;
+			color: #80000e;
+			font-size: 14px;
+			z-index: 1;
+	}
+</STYLE>
+</HEAD>
+<BODY>
+<p>Here we have some
+	<span tabindex="e" data-descr="collection of words and punctuation">text</span>
+	with a few 
+	<span tabindex="e" data-descr="small popups that appear when hovering">tooltips</span>
+<p>
+</BODY>
+</HTML>

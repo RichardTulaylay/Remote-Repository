@@ -1,0 +1,150 @@
+1. Print two paragraphs that are both indented using the &nbsp; command
+
+<html>
+<body>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Computer programming is defined as telling a computer what to 
+do through a special set of instructions which are then 
+interpreted by the computer to perform some task(s). These 
+instructions can be specified in one or more programming 
+languages including (but not limited to) Java, PHP, C, and 
+C++. A computer goes through a series of steps whose purpose 
+is to achieve something - a series of steps that are 
+instructed to it in great detail by computer programs. 
+Essentialy, computer programming is the process by which these 
+programs are designed and implemented.
+</p>
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;While computer programming can be a great tool used to achieve 
+many things, there are a few misconceptions when it comes to 
+the subject, a few misconceptions that should be cleared up. 
+One misconception about computer programming is that you would 
+need to have some kind of special software to write programs - 
+this is hardly the case.
+</p>
+</body>
+</html>
+
+
+2. Print two lists with any information you want. One list should be an ordered list, the other list should be an unordered list.
+
+<html>
+<body>
+<b>Hardware devices</b>
+
+<ol type="I">
+<li>CD-ROM drive</li>
+<li>DVD drive</li>
+<li>Hard disk</li>
+<li>Modem</li>
+</ol>
+
+<b>Web languages</b>
+
+<ul type="square">
+<li>HTML</li>
+<li>Javascript</li>
+<li>PHP</li>
+<li>Java</li>
+</ul>
+</body>
+</html>
+
+
+3. Create a page with a link at the bottom of it that when clicked will jump all the way to the top of the page
+
+<html>
+<body>
+<a name="top">The top of the page</a>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<a href="#top">Jump to the top of the page</a>
+</body>
+</html>
+
+
+4. Create a page with a link at the top of it that when clicked will jump all the way to the bottom of the page. At the bottom of the page there should be a link to jump back to the top of the page
+
+<html>
+<body>
+<a name="top">The top of the page</a>
+<br /><br />
+<a href="#bottom">Jump to the bottom of the page</a>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<p>Some text</p>
+<a href="#top">Jump to the top of the page</a>
+<br /><br />
+<a name="bottom">The bottom of the page</a>
+</body>
+</html>
+
+
+5. Display an image that when clicked will link to a search engine of your choice (should be opened in a new window).
+
+<html>
+<body>
+<a href="http://www.yahoo.com" target="_blank">
+<img src="/images/swan.jpg" alt="Swan" />
+</a>
+</body>
+<p>
+Click on the image to be taken to the Yahoo search engine.
+</p>
+</html>
+
+
+6. Display five different images. Skip two lines between each image. Each image should have a title.
+
+<html>
+<head>
+<title>Five images</title>
+</head>
+<body>
+<img src="/images/apple.jpg" alt="Apple" title="Apple" />
+<br /><br />
+<img src="/images/sky.jpg" alt="Sky" title="Sky" />
+<br /><br />
+<img src="/images/swan.jpg" alt="Swan" title="Swan" />
+<br /><br />
+<img src="/images/tree.jpg" alt="Tree" title="Tree" />
+<br /><br />
+<img src="/images/waterfall.jpg" src="Waterfall" title="Waterfall" />
+</body>
+</html>
