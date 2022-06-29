@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="js">JavaScript</p>
+    <div id="list">
+        <p id="java">Java</p>
+        <p id="python">Python</p>
+        <p id="scheme">Scheme</p>
+    </div>
+</body>
+
+<script>
+    // var
+    //     js = document.getElementById('js'),
+    //     list = document.getElementById('list');
+    // list.appendChild(js);
+
+    // var
+    //     list = document.getElementById('list'),
+    //     haskell = document.createElement('p');
+    // haskell.id = 'haskell';
+    // haskell.innerText = 'Haskell';
+    // list.appendChild(haskell);
+
+    //Dynamically creating a node and then adding it to the DOM tree allows for a lot of functionality. 
+    //As an example, the following code dynamically creates a <style> 
+    //node and then adds it to the end of the <head> node, 
+    //thus dynamically adding a new CSS definition to the document.
+
+    var d = document.createElement('style');
+    d.setAttribute('type', 'text/css');
+    d.innerHTML = 'p { color: red }';
+    document.getElementsByTagName('head')[0].appendChild(d);
+
+    //We want to insert Haskell into Python before.
+
+    var
+        list = document.getElementById('list'),
+        ref = document.getElementById('python'),
+        haskell = document.createElement('p');
+        haskell.id = 'haskell';
+        haskell.innerText = 'Haskell';
+        list.insertBefore(haskell, ref);
+
+    // the point of using insertBefore is to get a reference to a "reference child node". 
+    //In many cases, it is necessary to loop through all the children of a parent node,
+    //which can be achieved by iterating over the children property.
+    var
+        i, c,
+        list = document.getElementById('list');
+    for (i = 0; i < list.children.length; i++) {
+        c = list.children[i]; // Get the i-th child node 
+    }
+</script>
+
+</html>

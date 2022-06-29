@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // console.log('appName = ' + navigator.appName);
+        // console.log('appVersion = ' + navigator.appVersion);
+        // console.log('language = ' + navigator.language);
+        // console.log('platform = ' + navigator.platform);
+        // console.log('userAgent = ' + navigator.userAgent);
+
+        // console.log('Screen size = ' + screen.width + ' x ' + screen.height);
+        // This can be obtained using location.href. 
+        //To get the value of each part of the URL, you can write it like this
+
+        //http://www.example.com:8080/path/index.html?a=1&b=2#TOP
+
+        // location.protocol; // 'http'
+        // location.host; // 'www.example.com'
+        // location.port; // '8080'
+        // location.pathname; // '/path/index.html'
+        // location.search; // '?a=1&b=2'
+        // location.hash; // 'TOP'
+
+        // console.log('protocol = ' + location.protocol);
+        // console.log('host = ' + location.host);
+        // console.log('port = ' + location.port);
+        // console.log('pathname = ' + location.pathname);
+        // console.log('search = ' + location.search);
+        // console.log('hash = ' + location.hash);
+
+        if (confirm('reload the current page' + location.href + '?')) {
+            location.reload();
+        } else {
+            location.assign('https://www.google.com/'); // set a new url 
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Click the button to create a File Upload Button.</p>
+    <input type="file" id="test-file-upload">
+    <button onclick="myFunction()">Try it</button>
+</body>
+<script>
+    function myFunction() {
+        //     var x = document.createElement("INPUT");
+        //     x.setAttribute("type", "file");
+        //     document.body.appendChild(x);
+
+        //The uploaded files are processed by the backend server, 
+        //and JavaScript can check the file extensions when the form is 
+        //submitted in order to prevent users from uploading files with invalid formats
+        var f = document.getElementById('test-file-upload');
+        var filename = f.value; // 'C:\fakepath\test.png'
+        if (!filename || !(filename.endsWith('.jpg') || filename.endsWith('.png') || filename.endsWith('.gif'))) {
+            alert('Can only upload image file.');
+            return false;
+        }
+    }
+</script>
+
+</html>

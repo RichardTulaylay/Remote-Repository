@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+
+<body>
+    <!-- <script>
+        document.title = 'learn JavaScript!';
+    </script> -->
+    <dl id="drink-menu" style="border:solid 1px #ccc;padding:6px;">
+        <dt>Mocha</dt>
+        <dd>hot mocha coffee</dd>
+        <dt>Yoghur</dt>
+        <dd>Beijing Old Yoghurt</dd>
+        <dt>Juice</dt>
+        <dd>freshly apple juice</dd>
+    </dl>
+    <script>
+        var menu = document.getElementById('drink-menu');
+        var drinks = document.getElementsByTagName('dt');
+        var i, s;
+
+        s = 'Beverages offered are:';
+        for (i = 0; i < drinks.length; i++) {
+            s = s + drinks[i].innerHTML + ',';
+        }
+        console.log(s);
+    </script>
+    <!-- <script>
+        // Returns the node with the ID 'test'.
+        var test = document.getElementById('test');
+
+        // Locate the node with ID 'test-table' first, then return all the tr nodes within it.
+        var trs = document.getElementById('test-table').getElementsByTagName('tr');
+
+        // First locate the node with ID 'test-div', 
+        //then return all nodes within it whose class contains red.
+        var reds = document.getElementById('test-div').getElementsByClassName('red');
+
+        // Get all the immediate children under the node test:
+        var cs = test.children;
+
+        // Get the first and last child node under node test.
+        var first = test.firstElementChild;
+        var last = test.lastElementChild;
+    </script> -->
+    <!-- <script>
+        // Get the node with ID q1 via querySelector.
+        var q1 = document.querySelector('#q1');
+
+        // Get all eligible nodes within node q1 via querySelectorAll: 
+        var ps = document.querySelector('#q1'); 
+        // Get all eligible nodes within node q1 via querySelectorAll.
+        var ps = q1.querySelectorAll('div.highlighted > p');
+    </script> -->
+</body>
+
+</html>

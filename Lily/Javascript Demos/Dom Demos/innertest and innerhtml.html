@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .name {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <p> <b> Inner text below.It inject string as it is into the element. </b> </p>
+    <p id="innertext"> </p> <br>
+    <p> <b> Inner html below.It renders the string into the element and treat as part of html document. </b>
+    </p>
+    <p id="innerhtml"> </p>
+
+</body>
+<script>
+    const ourstring = 'My name is <b class="name">Satish chandra Gupta</b>.';
+    document.getElementById('innertext').innerText = ourstring;
+    document.getElementById('innerhtml').innerHTML = ourstring;
+</script>
+
+</html>

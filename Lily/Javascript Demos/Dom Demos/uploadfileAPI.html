@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="post" action="http://localhost/test" enctype="multipart/form-data">
+        <p>Image Preview：</p>
+        <div id="test-image-preview"></div>
+        <p>
+            <input type="file" id="test-image-file" name="test">
+        </p>
+        <p id="test-file-info"></p>
+    </form>
+</body>
+<script>
+    var
+        fileInput = document.getElementById('test-image-file'),
+        info = document.getElementById('test-file-info'),
+        preview = document.getElementById('test-image-preview');
+    // Listening for change events:
+    fileInput.addEventListener('change', function () {
+        // Clear background image:
+        preview.style.backgroundImage = '';
+        // Check if the file is selected:
+        if (!fileInput.value) {
+            info.innerHTML = 'No file selected';
+            return;
+        }
+        // Get File reference:
+        var file = fileInput.files[0];
+        // Get File information:
+        info.innerHTML = 'File: ' + file.name + '<br>' +
+            'Size: ' + file.size + '<br>' +
+            'Update: ' + file.lastModified;
+        if (file.type !== 'image/jpeg' && file.type !== 'image/png' && file.type !== 'image/gif') {
+            alert('Not a valid image file!');
+            return;
+        }
+        // Read files:
+        var reader = new FileReader();
+        //
+        reader.onload = function (e) {
+            var
+                data = e.target.result;          
+            preview.style.backgroundImage = 'url(' + data + ')';
+        };
+        // Read a file as a DataURL:
+        //HTML5's File API reads the contents of a file. 
+        //The file read as DataURL is a string, 
+        //similar to data:image/jpeg;base64,/9j/4AAQSk... (base64 encoding)... 
+        //that is commonly used to set images. If you need server-side processing, 
+        //send the string base64, followed by the characters to the server and 
+        //decode it with Base64 to get the binary content of the original file
+        reader.readAsDataURL(file);
+    });
+</script>
+
+</html>

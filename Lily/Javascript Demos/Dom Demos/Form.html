@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method="get">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <label><input type="radio" name="weekday" id="monday" value="1"> Monday</label>
+        <label><input type="radio" name="weekday" id="tuesday" value="2"> Tuesday</label><br><br>
+        <input type="date" value="2021-12-02" id="date"><br><br>
+        <input type="datetime-local" value="2021-12-02T20:21:12" id="datetime"><br><br>
+        <input type="color" value="#ff0000" id="color"><br><br>
+        <input type="submit" name="submit" value="Submit" />
+
+    </form>
+</body>
+<script>
+    var
+    input = document.getElementById('fname');
+    mon = document.getElementById('monday');
+    tue = document.getElementById('tuesday');
+    date=document.getElementById('date');
+    dateoffset=document.getElementById('datetime');
+    color=document.getElementById('color')
+</script>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div id="parent">
+        <p id="to-be-removed">First</p>
+        <p>Second</p>
+        <p>Third</p>
+    </div> -->
+    
+    <div id="parent">
+        <p>First</p>
+        <p>Second</p>
+    </div>
+</body>
+<script>
+    // Get the node to be deleted:
+    var self = document.getElementById('to-be-removed');
+    // Get the parent node:
+    var parent = self.parentElement;
+    // delete:
+    var removed = parent.removeChild(self);
+    removed === self; // true
+</script>
+
+<!-- When you iterate over the children of a parent node and perform a delete operation, 
+note that the children property is a read-only property and it is updated in real time when the children change. -->
+<script>
+    var parent = document.getElementById('parent');
+    parent.removeChild(parent.children[0]);
+    //parent.children[1] is not a valid node. 
+    //The reason is that when the <p>First</p> node is deleted, 
+    //the number of nodes in parent.children has changed from 2 to 1, and index[1] no longer exists.
+    parent.removeChild(parent.children[1]);//error
+</script>
+
+</html>
